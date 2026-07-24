@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ParkingLot.Entities.VehicleType;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ParkingFloor {
     private int floorId;
     private List<ParkingSpot>parkingSpots;
     private VehicleType supportedVehicleType;
+
+    private final ReentrantLock lock = new ReentrantLock();
 
     public ParkingFloor(int _floorId, int totalSpots, VehicleType _supportedVehicleType){
         floorId = _floorId;
@@ -30,5 +33,9 @@ public class ParkingFloor {
 
     public List<ParkingSpot> getParkingSpots(){
         return parkingSpots;
+    }
+
+    public ReentrantLock getLock(){
+        return lock;
     }
 }

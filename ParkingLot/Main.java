@@ -6,7 +6,7 @@ import ParkingLot.Entities.VehicleType;
 
 public class Main {
     public static void main(String[] args) {
-        ParkingLot parkingLot = new ParkingLot(10, 2);
+        ParkingLot parkingLot = new ParkingLot(2, 2);
 
         System.out.println("Parking lot status: ");
         parkingLot.displayStatus();
