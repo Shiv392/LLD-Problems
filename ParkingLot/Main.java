@@ -17,16 +17,21 @@ public class Main {
 
         Vehicle bike1 = new Vehicle("Yamaha", 3, VehicleType.BIKE);
         Vehicle bike2 = new Vehicle("RZ", 4, VehicleType.BIKE);
+        Vehicle bike3 = new Vehicle("Burgman", 2, VehicleType.BIKE);
 
         parkingLot.parkVehicle(car1);
         parkingLot.parkVehicle(car2);
 
         parkingLot.parkVehicle(bike1);
         parkingLot.parkVehicle(bike2);
+        parkingLot.parkVehicle(bike3);
 
         System.out.println("Parking lot status: ");
         parkingLot.displayStatus();
 
+        parkingLot.showParkings();
+
+        parkingLot.removeVehicle(3, 1);
         parkingLot.showParkings();
 
     }

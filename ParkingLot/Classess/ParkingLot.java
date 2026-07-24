@@ -16,8 +16,8 @@ public class ParkingLot {
         this.totalSpots = totalSpots;
         parkingFloors = new ArrayList<>();
 
-        parkingFloors.add(new ParkingFloor(totalFloors, totalSpots, VehicleType.BIKE));
-        parkingFloors.add(new ParkingFloor(totalFloors, totalSpots, VehicleType.CAR));
+        parkingFloors.add(new ParkingFloor(1, totalSpots, VehicleType.BIKE));
+        parkingFloors.add(new ParkingFloor(2, totalSpots, VehicleType.CAR));
     }
 
     //add parking method 
@@ -42,10 +42,13 @@ public class ParkingLot {
     //remove parking method 
     public boolean removeVehicle(int vehicleId, int floorId){
         for(ParkingFloor parkingFloor : parkingFloors){
+            if(parkingFloor.getFloorId()!=floorId) continue;
+
             for(ParkingSpot spot : parkingFloor.getParkingSpots()){
-                if(spot.getVehicle().getId() == vehicleId && parkingFloor.getFloorId() == floorId){
+                Vehicle vehicle = spot.getVehicle();
+                if(vehicle!=null && vehicle.getId() == vehicleId){
                     spot.removeVehicle();
-                    System.out.println("Vehicle "+spot.getVehicle().getName()+" has been removed from parking");
+                    System.out.println("Vehicle with Id"+vehicleId+" "+vehicle.getName()+" has been removed from parking");
                     return true;
                 }
             }
