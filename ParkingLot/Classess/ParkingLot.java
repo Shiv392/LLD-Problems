@@ -37,6 +37,7 @@ public class ParkingLot {
                 spot.removeVehicle();
 
                 System.out.println("Vehicle has been removed from spot id "+spot.getSpotId());
+                return true;
             }
         }
 
