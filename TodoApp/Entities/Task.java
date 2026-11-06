@@ -3,14 +3,14 @@ package TodoApp.Entities;
 import java.time.LocalDateTime;
 
 public class Task {
-    private final int id;
+    private final long id;
     private final long userId;
     private String name;
     private boolean status;
     private final LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Task(int _id, long _userId, String _name){
+    public Task(long _id, long _userId, String _name){
        if(_name == null || _name.isBlank()){
         throw  new IllegalArgumentException("Name can't be empty");
        }
@@ -43,7 +43,7 @@ public class Task {
     }
 
     //getter methods -------------------------->
-    public int getId(){
+    public long getId(){
         return id;
     }
     public String getName(){
@@ -57,5 +57,9 @@ public class Task {
     }
     public LocalDateTime getUpdatedAt(){
         return updatedAt;
+    }
+
+    public long getUserId(){
+        return userId;
     }
 }

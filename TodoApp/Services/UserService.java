@@ -38,4 +38,8 @@ public class UserService {
     public List<User> getAllUser(){
         return this.userRepository.getAllUsers();
     }
+
+    public Optional<User> getUserById(long id){
+        return this.userRepository.findById(id);
+    }
 }
